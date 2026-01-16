@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <p>Youtube Subscribe Button</p>
+
+
+    <button onclick="Subscribe()" class="btn">Subscribe</button>
+
+
+
+    <br><br>
+    <p>Rock Paper Scissors</p>
+    <a href="08-rock-paper-scissors .html">click here</a>
+    <br><br>
+    <p>Orders under $40 = +$10 shipping.</p>
+
+    <p>Orders over $40 = FREE shipping.
+    </p>
+
+    <p>Amazon Shipping Calculator
+    </p>
+    <p class="shippingcost">
+    </p>
+    <p class="totalcost">
+    </p>
+    <input type="text" placeholder="Cost of order" class="js-cost-input" onkeydown="onenter(event)
+    ">
+    <button onclick="calculation()">Calculate</button>
+
+    <br><br><br>
+    <a href="">CSS VERSION OF THESE PROJECTS</a>
+</body>
+
+<script>
+
+    function onenter(event) {
+        if (event.key === 'Enter') {
+            calculation();
+        }
+    }
+
+    function calculation() {
+        const inputelem = document.querySelector('.js-cost-input');
+        let cost = Number(inputelem.value);
+        if (cost < 40) {
+            cost += 10;
+        }
+        document.querySelector('.totalcost').innerHTML = `$${cost}`;
+
+    }
+
+    function Subscribe() {
+        const btnelem = document.querySelector('.btn');
+        if (btnelem.innerText === 'Subscribe') {
+            btnelem.innerText = 'Subscribed';
+        }
+        else {
+            btnelem.innerText = 'Subscribe';
+        }
+
+    }
+</script>
+
+</html>

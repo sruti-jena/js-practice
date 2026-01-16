@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    ------9a------
+    <br>
+    <button class="a">9a</button>
+    <br><br>
+
+
+    ------9b------
+    <br>
+    <button class="b">9b</button>
+    <br><br>
+
+
+    ------9c------
+    <br>
+    <button class="headsbtn" onclick="
+        document.querySelector('.result').innerHTML=`You Chose Heads`
+        ">head</button>
+    <button class="tailsbtn" onclick="
+        document.querySelector('.result').innerHTML=`You Chose Tails`
+        ">tail</button>
+    <p class="result"></p>
+    <br>
+
+
+    ------9d------9e-------9f------
+    <br>
+    <input type="text" class="js-input" onkeydown="
+        onevent(event); ">
+    <button onclick="
+    nameselected()
+    ">Submit</button>
+    <p class="yourname"></p>
+    <br>
+
+    ------9g------
+    <br>
+    <input type="text" placeholder="Enter the value" class="inputbtn" onkeydown="
+    if(event.key==='Enter'){
+        cal()
+    }
+    ">
+    <button class="calculatebtn" onclick="
+    
+    ">Calculate</button>
+    <p class="totalbtn"></p>
+    <br>
+
+    -----9h------
+    <br>
+    <input type="text" placeholder="type something....." class="txt" onkeyup="
+    const inputel=document.querySelector('.txt');
+    document.querySelector('.msg').innerHTML=inputel.value;
+    ">
+    <p class="msg"></p>
+    <br>
+
+
+    ------9i------
+    <br>
+    <button>Show Quantity</button>
+    <button>Add to Cart</button>
+    <button>+2</button>
+    <button>+3</button>
+    <button>+4</button>
+    <button>+5</button>
+    <button>Remove from Cart</button>
+    <button>-2</button>
+    <button>-3</button>
+    <p></p>
+    <script>
+        function cal() {
+            const inpelm = document.querySelector('.inputbtn');
+            let inp = Number(inpelm.value) * 100;
+            if (inp <= 4000) {
+                inp += 1000;
+            }
+            document.querySelector('.totalbtn').innerHTML = `$${inp / 100}`;
+        }
+        function onevent(event) {
+            if (event.key === 'Enter') {
+                nameselected();
+
+            }
+        }
+        function nameselected() {
+            const inputelem = document.querySelector('.js-input');
+            document.querySelector('.yourname').innerHTML = `Your name is ${inputelem.value}`;
+        }
+
+        console.log(document.querySelector('.a'));
+
+        document.querySelector('.b').innerHTML = '9b done';
+    </script>
+</body>
+
+</html>

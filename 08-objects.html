@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <script>
+        // const product = {
+        //     name: 'socks',
+        //     price: 1090
+        // };
+        // console.log(product);
+        // console.log(product.name);
+        // console.log(product.price);
+        // product.name = 'pair of shoes';
+        // console.log(product);
+
+        // product.newProperty = true;
+        // console.log(product);
+
+        // delete product.newProperty;
+        // console.log(product);
+
+        //object make our code organised, it let us group multiple values together and also use them
+        //json is more universal and it can be understood by almost all languages 
+        // while js is only understood by js 
+        //therefore we use json when we send data between two computers
+        //also when we are storing data we use json
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': '1 day',
+            rating: {
+                stars: 8.7,
+                count: 87
+            },
+            fun: function function1() {
+                console.log('function inside object');
+            }
+        };
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);
+        console.log(product2.rating.count);
+        product2.fun();
+
+        //we will use built-in json object which will convert js object to json
+        console.log(JSON.stringify(product2));
+
+        //json doesnt support function in it
+        //json is a string 
+
+        const jsonstring = JSON.stringify(product2);
+        //convert from json to js object
+        console.log(JSON.parse(jsonstring));
+
+
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        //auto boxing like we are using here will not work for null and undefined
+        const o1 = {
+            message: 'hello'
+        };//so here the o1 is not pointing to the message it is rather stored somewhere else 
+        //in the memory and it is just a reference that is pointing to the message
+        const o2 = o1;//same here also the o2 is now pointing to the same message 
+        //as a reference and it does nat make a copy of the message
+        //this is called copy by reference  
+
+        o1.message = 'good job';
+        console.log(o2.message);
+        console.log(o1 == o2);
+        const o4 = {
+            message: 'hello'
+        };
+        const { message } = o4;//destructuring
+        console.log(message);
+
+        const object5 = {
+            message,
+            method() {
+                console.log('method');
+            }
+        };
+        console.log(object5);
+        object5.method();
+
+        const p1 = {
+            pname: 'basketball',
+            price: 2095
+        }
+        const p2 = {
+            pname: 'socks',
+            price: 1090
+        }
+        const p3 = {
+            pname: 'socks',
+            price: 1090
+        }
+        console.log(p1);
+        p1.price += 500;
+        console.log(p1);
+
+        p1['delivery-time'] = '3 days';
+        console.log(p1);
+
+        function compareprice(p1, p2) {
+            if (p1.price > p2.price) {
+                return p2;
+            }
+            else {
+                return p1;
+            }
+        }
+        console.log(compareprice(p1, p2));
+
+
+        function isSameProduct(p1, p2) {
+            if (p1.price === p2.price && p1.name === p2.name) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        console.log(isSameProduct(p1, p2));
+        console.log(isSameProduct(p2, p3));
+        console.log('GOOD Morning'.toLowerCase());
+        console.log('hello'.repeat(2));
+    </script>
+</body>
+
+</html>
