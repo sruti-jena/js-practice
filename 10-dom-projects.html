@@ -13,6 +13,31 @@
             padding: 10px 15px;
             font-weight: 600;
             border-radius: 30px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .is-subscribed {
+            background-color: rgb(234, 234, 234);
+            color: rgb(98, 98, 98);
+        }
+
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        .cal {
+            border: none;
+            background-color: green;
+            color: white;
+            padding: 12px 15px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .js-cost-input {
+            padding: 10px;
+            font-size: 15px;
         }
     </style>
 </head>
@@ -40,9 +65,9 @@
     </p>
     <p class="totalcost">
     </p>
-    <input type="text" placeholder="Cost of order" class="js-cost-input" onkeydown="onenter(event)
+    <input type="text" placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="onenter(event)
     ">
-    <button onclick="calculation()">Calculate</button>
+    <button class="cal" onclick="calculation() ">Calculate</button>
 
     <br><br><br>
     <a href="">CSS VERSION OF THESE PROJECTS</a>
@@ -70,9 +95,11 @@
         const btnelem = document.querySelector('.btn');
         if (btnelem.innerText === 'Subscribe') {
             btnelem.innerText = 'Subscribed';
+            btnelem.classList.add('is-subscribed')
         }
         else {
             btnelem.innerText = 'Subscribe';
+            btnelem.classList.remove('is-subscribed')
         }
 
     }
