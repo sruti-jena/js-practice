@@ -39,6 +39,10 @@
             padding: 10px;
             font-size: 15px;
         }
+
+        .error-msg {
+            color: red;
+        }
     </style>
 </head>
 
@@ -63,12 +67,13 @@
     </p>
     <p class="shippingcost">
     </p>
-    <p class="totalcost">
-    </p>
+
     <input type="text" placeholder="Cost of order" class="js-cost-input cost-input" onkeydown="onenter(event)
     ">
     <button class="cal" onclick="calculation() ">Calculate</button>
-
+    <p class="totalcost">
+    </p>
+    <p class="error-msg"></p>
     <br><br><br>
     <a href="">CSS VERSION OF THESE PROJECTS</a>
 </body>
@@ -84,6 +89,12 @@
     function calculation() {
         const inputelem = document.querySelector('.js-cost-input');
         let cost = Number(inputelem.value);
+        document.querySelector('.totalcost').innerHTML = '';
+        document.querySelector('.error-msg').innerHTML = '';
+        if (cost < 0) {
+            document.querySelector('.error-msg').innerHTML = 'Error: cost cannot be less than $0'
+            return;
+        }
         if (cost < 40) {
             cost += 10;
         }

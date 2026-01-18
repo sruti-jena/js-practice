@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .addcartbtn {
+            color: black;
+            background-color: rgb(255, 216, 20);
+            border: none;
+            padding: 10px 15px;
+            width: 170px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .uber-1 {
+            cursor: pointer;
+            color: white;
+            background-color: black;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            padding: 12px 22px;
+        }
+
+        .uber-2 {
+            cursor: pointer;
+            color: black;
+            background-color: rgb(222, 222, 222);
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 22px;
+        }
+
+        .toggle {
+            cursor: pointer;
+            color: black;
+            background-color: rgb(222, 222, 222);
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 22px;
+        }
+
+        .is_toggle {
+            cursor: pointer;
+            color: white;
+            background-color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 22px;
+        }
+
+        .cal {
+            border: none;
+            background-color: green;
+            color: white;
+            padding: 12px 15px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .js-cost-input {
+            padding: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    --------10a-----------
+    <br><br>
+    <button class="addcartbtn">Add to Cart</button>
+    <br><br>
+    ---------10b-----------
+    <br><br>
+    <button class="uber-1">Request now</button>
+    <button class="uber-2">Schedule for Later</button>
+    <br><br>
+    --------10c-----------
+    <br><br>
+    <button class="js-btn">Test</button>
+    <br><br>
+    --------10d-e-f-g---------
+    <br><br>
+    <button class="toggle" onclick="
+    togg('.toggle');
+    ">Gaming</button>
+    <button class="toggle-1 toggle" onclick="
+    togg('.toggle-1');
+    ">Music</button>
+    <button class="toggle-2 toggle" onclick="
+    togg('.toggle-2');
+    ">Tech</button>
+    <br><br>
+
+    <script>
+
+
+        function togg(selector) {
+            const button = document.querySelector(selector);
+            if (!button.classList.contains('is_toggle')) {
+                turnoffprevious();
+                button.classList.add('is_toggle');
+            }
+            else {
+                button.classList.remove('is_toggle');
+            }
+        }
+        function turnoffprevious() {
+            const turnof = document.querySelector('.is_toggle');
+            if (turnof) {
+                turnof.classList.remove('is_toggle')
+            }
+        }
+        const btn = document.querySelector('.js-btn');
+        console.log(btn.classList.contains('js-btn'))
+    </script>
+</body>
+
+</html>
