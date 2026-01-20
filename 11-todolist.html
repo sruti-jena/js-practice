@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do-list</title>
+</head>
+
+<body>
+    <p>To Do List</p>
+
+    <input type="text" placeholder="Add To do name" class="inputtext" onkeydown="
+        if(event.key==='Enter'){
+            addtodo();
+        }
+    ">
+
+    <button onclick="addtodo();">Add</button>
+
+    <div class="show"></div>
+
+    <script>
+        const todoarray = [];
+        rendertodo();
+
+        function rendertodo() {
+            let todoarrayHTML = '';
+
+            for (let i = 0; i < todoarray.length; i++) {
+                const todo = todoarray[i];
+                const html = `<p>${todo}</p>`;
+                todoarrayHTML += html;
+            }
+
+            console.log(todoarrayHTML);
+            document.querySelector('.show').innerHTML = todoarrayHTML;
+        }
+
+        function addtodo() {
+            const tex = document.querySelector('.inputtext');
+            const nam = tex.value;
+            console.log(nam);
+
+            todoarray.push(nam);
+            tex.value = ''; // tiny necessary UX fix
+
+            rendertodo();
+        }
+    </script>
+</body>
+
+</html>

@@ -10,9 +10,34 @@
 <body>
     <p class="show"></p>
     <script>
-        const myarr = [1, 2, 3];
-        myarr.splice(0, 3);
-        document.querySelector('.show').innerHTML = myarr;
+        // const myarr = [1, 2, 3];
+        // myarr.splice(0, 3);
+        // document.querySelector('.show').innerHTML = myarr;
+        // let i = 1;
+        // while (i <= 7) {
+        //     console.log(i);
+        //     i++;
+        // }
+        // for (let j = 1; j <= 5; j++) {
+        //     console.log(j);
+        // }
+        // let randomnum = 0;
+
+        // while (randomnum < 0.5) {
+        //     randomnum = Math.random();
+        // }
+        // console.log(randomnum)
+
+        const todoList = [
+            'make dinner', 'wash dishes', 'laundry'
+        ];
+
+
+        for (let i = 0; i < todoList.length; i++) {
+            // console.log(todoList[index]);
+            const value = todoList[i];
+            document.querySelector('.show').innerHTML = `${value}`
+        }
 
     </script>
 </body>
